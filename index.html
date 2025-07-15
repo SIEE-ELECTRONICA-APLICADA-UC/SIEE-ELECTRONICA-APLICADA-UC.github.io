@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Proyecto SIEE-UC ELECTRÓNICA APLICADA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 40vh;
+            max-height: 450px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 50vh;
+            }
+        }
+        .kpi-card {
+            background-color: #003f5c;
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .kpi-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+            padding-left: 2.5rem;
+            border-left: 4px solid #7a5195;
+        }
+        .timeline-item:last-child {
+            border-left: 4px solid transparent;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -11px;
+            top: 0;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-color: #ef5675;
+            border: 3px solid #f0f4f8;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #ef5675, #ffa600);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-[#003f5c]">SIEE-ELECTRÓNICA APLICADA</h1>
+            <a href="#contacto" class="bg-[#ff764a] hover:bg-[#ef5675] text-white font-bold py-2 px-4 rounded-full transition duration-300">Invertir Ahora</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section class="text-center mb-20">
+            <h2 class="text-5xl md:text-6xl font-bold mb-4">Revolucionando la Formación en <span class="gradient-text">Electrónica Aplicada: Sembrando Futuro para la Venezuela Potencia</span></h2>
+            <p class="text-xl max-w-3xl mx-auto text-gray-600">Forjando la próxima generación de ingenieros y consolidando la soberanía tecnológica de Venezuela a través de un entorno de enseñanza-aprendizaje pionero en el país.</p>
+        </section>
+
+        <section id="problema" class="mb-20">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold mb-2">El Problema: Una Oportunidad Estratégica</h3>
+                <p class="text-lg text-gray-600">Enfrentamos desafíos críticos que limitan el potencial energético y tecnológico nacional.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl mb-4">📉</div>
+                    <h4 class="font-bold text-xl mb-2 text-[#003f5c]">Deserción Estudiantil</h4>
+                    <p class="text-gray-600">Solo el <span class="text-3xl font-bold text-[#bc5090]">50%</span> de los estudiantes culmina la carrera, con una caída del <span class="text-3xl font-bold text-[#bc5090]">15%</span> en el interés.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl mb-4">🎓</div>
+                    <h4 class="font-bold text-xl mb-2 text-[#003f5c]">Brecha Teoría-Práctica</h4>
+                    <p class="text-gray-600">Los conceptos teóricos no se conectan con aplicaciones reales, generando un aprendizaje superficial.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl mb-4">🔬</div>
+                    <h4 class="font-bold text-xl mb-2 text-[#003f5c]">Laboratorios Obsoletos</h4>
+                    <p class="text-gray-600">Carencia de equipos modernos y herramientas didácticas que demanda la industria actual.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl mb-4">🇻🇪</div>
+                    <h4 class="font-bold text-xl mb-2 text-[#003f5c]">Dependencia Tecnológica</h4>
+                    <p class="text-gray-600">La falta de talento práctico perpetúa la dependencia de soluciones y conocimientos foráneos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solucion" class="mb-20">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold mb-2">Nuestra Solución: SIEE- ELECTRÓNICA APLICADA</h3>
+                <p class="text-lg text-gray-600">Una propuesta integral que transforma el paradigma educativo.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h4 class="font-bold text-2xl mb-4 text-[#7a5195]">A. Guía Digital Multiplataforma</h4>
+                    <p class="text-gray-600 mb-4">Un dashboard interactivo que va más allá de un simple manual, ofreciendo una experiencia inmersiva.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> Contenido Multimedia (Videos, Simulaciones)</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> Enfoque por Competencias: Ser, Saber, Hacer.</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> Acceso Universal (PC, Tablet, Móvil)</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> Preparado para interactuar en tiempo real con el banco de ensayos.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h4 class="font-bold text-2xl mb-4 text-[#7a5195]">B. Banco de Ensayos Físico</h4>
+                    <p class="text-gray-600 mb-4">Un laboratorio modular, seguro y robusto para la experimentación directa con convertidores de potencia.</p>
+                     <ul class="space-y-3">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> Convertidores Clave: Buck, Boost, Flyback y Forward.</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> Máxima Seguridad Eléctrica Garantizada</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> Diseño "Plug & Play" para un aprendizaje ágil</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✔</span> Modelo Replicable y Escalable a nivel nacional</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section id="inversion" class="mb-20 bg-white rounded-lg shadow-lg p-8">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold mb-2">Solicitud de Inversión: $28,500 USD</h3>
+                <p class="text-lg text-gray-600">Capital destinado a la ejecución transparente y eficiente del proyecto.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h4 class="font-bold text-2xl mb-4 text-[#003f5c]">Desglose de la Inversión</h4>
+                    <p class="text-gray-600 mb-6">Cada dólar invertido tiene un propósito claro para la construcción de este entorno de ensayos controlados. El equipamiento crítico representa la mayor parte, garantizando las herramientas necesarias para la experimentación. El capital humano es clave, por lo que se asigna un estipendio justo. Finalmente, la infraestructura y un fondo de contingencia aseguran la viabilidad y éxito del proyecto.</p>
+                     <div class="space-y-4">
+                        <div class="flex justify-between items-center"><span class="font-semibold">Equipamiento y Materiales</span> <span class="font-bold text-[#003f5c]">$11700</span></div>
+                        <div class="flex justify-between items-center"><span class="font-semibold">Estipendio Equipo Desarrollo</span> <span class="font-bold text-[#374c80]">$9000</span></div>
+                        <div class="flex justify-between items-center"><span class="font-semibold">Cómputo y Software</span> <span class="font-bold text-[#7a5195]">$2200</span></div>
+                        <div class="flex justify-between items-center"><span class="font-semibold">Adecuación Infraestructura</span> <span class="font-bold text-[#bc5090]">$4000</span></div>
+                        <div class="flex justify-between items-center"><span class="font-semibold">Fondo de Contingencia</span> <span class="font-bold text-[#ef5675]">$800</span></div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="investmentChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="hoja-de-ruta" class="mb-20">
+            <div class="text-center mb-12">
+                <h3 class="text-4xl font-bold mb-2">Hoja de Ruta del Proyecto</h3>
+                <p class="text-lg text-gray-600">Un plan de ejecución claro y estructurado en 4 fases clave.</p>
+            </div>
+            <div class="max-w-3xl mx-auto">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h4 class="font-bold text-xl mb-1 text-[#7a5195]">Fase 1: Desarrollo y Diseño</h4>
+                    <p class="text-gray-500 font-semibold mb-2">Mes 1-3</p>
+                    <p class="text-gray-600">Adquisición de componentes y desarrollo del software para el dashboard interactivo.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h4 class="font-bold text-xl mb-1 text-[#7a5195]">Fase 2: Prototipado y Ensamblaje</h4>
+                    <p class="text-gray-500 font-semibold mb-2">Mes 4-6</p>
+                    <p class="text-gray-600">Construcción y ensamblaje de los 4 bancos de ensayo, integrando sistemas de medición y seguridad.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <h4 class="font-bold text-xl mb-1 text-[#7a5195]">Fase 3: Pruebas y Validación</h4>
+                    <p class="text-gray-500 font-semibold mb-2">Mes 7-8</p>
+                    <p class="text-gray-600">Pruebas finales de seguridad eléctrica y compatibilidad. Plan piloto con estudiantes.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot" style="background-color: #ffa600;"></div>
+                    <h4 class="font-bold text-xl mb-1 text-[#7a5195]">Fase 4: Lanzamiento y Escalamiento</h4>
+                    <p class="text-gray-500 font-semibold mb-2">A partir del Mes 9</p>
+                    <p class="text-gray-600">Implementación oficial en el Laboratorio de Electrónica IV e inicio de la comercialización a otras instituciones.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="impacto" class="text-center">
+            <div class="mb-12">
+                <h3 class="text-4xl font-bold mb-2">Impacto Estratégico: Una Inversión en el Futuro</h3>
+                <p class="text-lg text-gray-600">Beneficios tangibles para todos. Las naciones marchan hacia el término de su grandeza, al mismo paso que camina su educación. Simón Bolívar.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="kpi-card">
+                    <h4 class="font-bold text-xl mb-2">Estudiantes</h4>
+                    <p>Aumento de la motivación y desarrollo de habilidades prácticas demandadas.</p>
+                </div>
+                <div class="kpi-card">
+                    <h4 class="font-bold text-xl mb-2">Universidades</h4>
+                    <p>Modernización académica, reducción de la deserción y aumento del prestigio internacional.</p>
+                </div>
+                 <div class="kpi-card">
+                    <h4 class="font-bold text-xl mb-2">Industria</h4>
+                    <p>Disponibilidad de ingenieros cualificados, seguros, listos para innovar y resolver problemas.</p>
+                </div>
+                 <div class="kpi-card">
+                    <h4 class="font-bold text-xl mb-2">Venezuela</h4>
+                    <p>Un paso firme hacia la soberanía tecnológica y el desarrollo de la Venezuela Potencia.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contacto" class="bg-[#003f5c] text-white mt-20">
+        <div class="container mx-auto px-6 py-12 text-center">
+            <h3 class="text-3xl font-bold mb-4">Estamos Listos para Ejecutar.</h3>
+            <p class="text-lg mb-10">Únase a nosotros para construir el futuro de la ingeniería en Venezuela.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 text-left">
+                <!-- Esthefanía D. Medina G. -->
+                <div>
+                    <p class="font-bold text-lg mb-2">Líder del Proyecto:</p>
+                    <p class="mb-1">Esthefanía D. Medina G.</p>
+                    <p class="font-bold">Email:</p>
+                    <p class="mb-1 break-all">edmedina@uc.edu.ve</p>
+                    <p class="mb-1 break-all">esthefaniamedina.uc@gmail.com</p>
+                    <p class="font-bold">Teléfono:</p>
+                    <p class="mb-1">+58 (424) 376-8084</p>
+                </div>
+                <!-- Máximo Fuentes -->
+                <div>
+                    <p class="font-bold text-lg mb-2">Líder del Proyecto:</p>
+                    <p class="mb-1">Máximo Fuentes</p>
+                    <p class="font-bold">Email:</p>
+                    <p class="mb-1 break-all">mvfuentes@uc.edu.ve</p>
+                    <p class="mb-1 break-all">maximofuentes.131@gmail.com</p>
+                    <p class="font-bold">Teléfono:</p>
+                    <p class="mb-1">+58 (412) 745-6048</p>
+                </div>
+                <!-- Ing. Egilda Pérez -->
+                <div>
+                    <p class="font-bold text-lg mb-2">Tutora:</p>
+                    <p class="mb-1">Ing. Egilda Pérez</p>
+                    <p class="font-bold">Email:</p>
+                    <p class="mb-1 break-all">egiperez@uc.edu.ve</p>
+                    <p class="mb-1 break-all">egiperez@gmail.com</p>
+                    <p class="font-bold">Teléfono:</p>
+                    <p class="mb-1">+58 (412) 438-6876</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function wrapLabels(label, maxWidth) {
+            const words = label.split(' ');
+            let line = '';
+            const lines = [];
+            for (let i = 0; i < words.length; i++) {
+                const testLine = line + words[i] + ' ';
+                if (testLine.length > maxWidth && i > 0) {
+                    lines.push(line.trim());
+                    line = words[i] + ' ';
+                } else {
+                    line = testLine;
+                }
+            }
+            lines.push(line.trim());
+            return lines;
+        }
+
+        const ctx = document.getElementById('investmentChart').getContext('2d');
+        const originalLabels = [
+            'Equipamiento y Materiales Críticos',
+            'Estipendio Equipo de Desarrollo',
+            'Equipos de Cómputo y Software',
+            'Adecuación de Infraestructura',
+            'Fondo de Contingencia'
+        ];
+        
+        const investmentData = {
+            labels: originalLabels.map(label => wrapLabels(label, 16)),
+            datasets: [{
+                label: 'Desglose de Inversión',
+                data: [11700, 9000, 2200, 4000, 800],
+                backgroundColor: [
+                    '#003f5c',
+                    '#374c80',
+                    '#7a5195',
+                    '#bc5090',
+                    '#ef5675',
+                ],
+                borderColor: '#f0f4f8',
+                borderWidth: 4,
+                hoverOffset: 10
+            }]
+        };
+
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: investmentData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                           font: {
+                                size: 14,
+                                family: 'Poppins'
+                           },
+                           color: '#333',
+                           padding: 20,
+                           generateLabels: function(chart) {
+                                const data = chart.data;
+                                if (data.labels.length && data.datasets.length) {
+                                    return data.labels.map(function(label, i) {
+                                        const meta = chart.getDatasetMeta(0);
+                                        const style = meta.controller.getStyle(i);
+                                        return {
+                                            text: Array.isArray(label) ? label.join(' ') : label,
+                                            fillStyle: style.backgroundColor,
+                                            strokeStyle: style.borderColor,
+                                            lineWidth: style.borderWidth,
+                                            hidden: isNaN(data.datasets[0].data[i]) || meta.data[i].hidden,
+                                            index: i
+                                        };
+                                    });
+                                }
+                                return [];
+                           }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            },
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    label += new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(context.parsed);
+                                }
+                                return label;
+                            }
+                        },
+                        backgroundColor: '#003f5c',
+                        titleFont: { size: 16, family: 'Poppins' },
+                        bodyFont: { size: 14, family: 'Poppins' },
+                        padding: 15,
+                        cornerRadius: 8,
+                        boxPadding: 5
+                    }
+                },
+                cutout: '60%'
+            }
+        });
+    </script>
+</body>
+</html>
